@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://n87rw5cxnnn8"]
+
+[ext_resource type="Script" uid="uid://bb80c6ong4rre" path="res://src/Game/game.gd" id="1_ne6pe"]
+[ext_resource type="Script" uid="uid://v53l6pm2pjra" path="res://src/Game/main_game_input_handler.gd" id="3_4f56l"]
+[ext_resource type="Script" uid="uid://brsf7l3fr3gx8" path="res://src/Game/EventHandlers/game_over_input_handler.gd" id="3_7m6cs"]
+[ext_resource type="Script" uid="uid://c3i5as44nf6ig" path="res://src/Map/map.gd" id="3_xyl86"]
+[ext_resource type="Script" uid="uid://h3x6hhwo3de5" path="res://src/Map/dungeon_generator.gd" id="4_15hgc"]
+[ext_resource type="Script" uid="uid://bplkp5t33b4t1" path="res://src/Map/field_of_view.gd" id="5_bvmgb"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ne6pe")
+
+[node name="InputHandler" type="Node" parent="."]
+
+[node name="MainGameInputHandler" type="Node" parent="InputHandler"]
+script = ExtResource("3_4f56l")
+
+[node name="GameOverInputHandler" type="Node" parent="InputHandler"]
+script = ExtResource("3_7m6cs")
+
+[node name="Map" type="Node2D" parent="."]
+script = ExtResource("3_xyl86")
+
+[node name="DungeonGenerator" type="Node" parent="Map"]
+script = ExtResource("4_15hgc")
+
+[node name="FieldOfView" type="Node" parent="Map"]
+script = ExtResource("5_bvmgb")
+
+[node name="Tiles" type="Node2D" parent="Map"]
+
+[node name="Entities" type="Node2D" parent="Map"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

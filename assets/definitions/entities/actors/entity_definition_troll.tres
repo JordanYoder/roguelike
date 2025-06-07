@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://dee7p8h0bkltn"]
+
+[ext_resource type="Script" uid="uid://pn4mpset1juq" path="res://src/Entities/Actors/Components/ComponentDefinitions/fighter_component_definition.gd" id="1_0yx76"]
+[ext_resource type="Texture2D" uid="uid://bnjmo3xlveqfc" path="res://assets/resources/default_death_texture.tres" id="1_54ag0"]
+[ext_resource type="Script" uid="uid://po1m0psw5b75" path="res://src/Entities/entity_definition.gd" id="1_q5qby"]
+[ext_resource type="Texture2D" uid="uid://h7i8uiwlysq2" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_4552x"]
+
+[sub_resource type="Resource" id="Resource_54ag0"]
+script = ExtResource("1_0yx76")
+max_hp = 16
+power = 4
+defense = 1
+death_texture = ExtResource("1_54ag0")
+death_color = Color(0.545098, 0, 0, 1)
+metadata/_custom_type_script = "uid://pn4mpset1juq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeb23"]
+atlas = ExtResource("2_4552x")
+region = Rect2(432, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_q5qby")
+name = "Troll"
+texture = SubResource("AtlasTexture_xeb23")
+color = Color(0, 0.498039, 0, 1)
+is_blocking_movement = true
+type = 2
+fighter_definition = SubResource("Resource_54ag0")
+ai_type = 1
