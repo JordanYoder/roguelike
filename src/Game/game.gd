@@ -41,20 +41,19 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:  # Runs every frame
 	# Gets the action for this frame from input_handler
-	var action: Action = input_handler.get_action(player)
+	var action: Action = await input_handler.get_action(player)
 	
 	if action:
 		# If an action is found get the location of the player before the action is performed
 		var previous_player_position: Vector2i = player.grid_position
 		
 		# Perform the action
-		action.perform()
-		
-		# Perform enemy turn
-		_handle_enemy_turns()
-		
-		# Update FOV after the player action and enemy action
-		map.update_fov(player.grid_position)
+		if action.perform():
+			# Perform enemy turn
+			_handle_enemy_turns()
+			
+			# Update FOV after the player action and enemy action
+			map.update_fov(player.grid_position)
 
 
 func _handle_enemy_turns() -> void:

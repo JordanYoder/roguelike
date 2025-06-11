@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://jlkd18dgnnml"]
+
+[ext_resource type="FontFile" uid="uid://duewef330bsej" path="res://assets/fonts/Kenney Mini Square.ttf" id="1_ekohr"]
+[ext_resource type="Script" uid="uid://d2ct8oi5edadm" path="res://src/GUI/InventoryMenu/inventory_menu.gd" id="2_o1g78"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwlm8"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hrof"]
+
+[node name="InventoryMenuButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_ekohr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_uwlm8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7hrof")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uwlm8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uwlm8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hrof")
+action_mode = 0
+shortcut_feedback = false
+alignment = 0
+script = ExtResource("2_o1g78")

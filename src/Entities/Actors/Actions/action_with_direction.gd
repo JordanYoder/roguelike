@@ -22,3 +22,4 @@ func get_blocking_entity_at_destination() -> Entity:
 func get_target_actor() -> Entity:
 	# Calculates the target using get_destination, then queries the map to retrieve any actor on that tile
 	return get_map_data().get_actor_at_location(get_destination())
+
